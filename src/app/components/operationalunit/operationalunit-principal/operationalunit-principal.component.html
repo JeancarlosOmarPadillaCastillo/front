@@ -1,0 +1,39 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col" class="text-center"><strong>Nombre</strong></th>
+    <th scope="col" class="text-center"><strong>descripcion</strong></th>
+    <th scope="col" class="text-center"><strong>Fecha</strong></th>
+    <th scope="col" class="text-center"><strong>Duración</strong></th>
+    <th scope="col" class="text-center"><strong>Localización</strong></th>
+    <th scope="col" class="text-center"><strong>Tipo</strong></th>
+    <th scope="col" class="text-center"><strong>Soa</strong></th>
+    <th scope="col" class="text-center"><strong>Acciones</strong></th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let adolescente of adolescentes">
+  <tr>
+    <td class="text-center">{{adolescente.name}}</td>
+    <td class="text-center">{{adolescente.description}}</td>
+    <td class="text-center">{{adolescente.date}}</td>
+    <td class="text-center">{{adolescente.duration}}</td>
+    <td class="text-center">{{adolescente.location}}</td>
+    <td class="text-center">{{adolescente.type_pronacej}}</td>
+
+    <td class="text-center">{{adolescente.type_soa}}</td>
+    <td>
+      <div class="columna-acciones">
+        <button  mat-fab color="primary" aria-label="Editar" *ngIf="adolescente.active === 'A'">
+          <mat-icon>mode_edit</mat-icon>
+        </button>
+        <button  mat-fab color="warn" aria-label="Eliminar" *ngIf="adolescente.active === 'A'">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+      </div>
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>
